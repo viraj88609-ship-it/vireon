@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ice777 - Play & Win</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('picture/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .container {
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .language-selector {
+      margin-bottom: 30px;
+    }
+
+    .language-label {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .language-selector select {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      border: none;
+      background: #fff;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .whatsapp-btn,
+    .register-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    .whatsapp-btn img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .register-btn {
+      background-color: #ff0000;
+      color: white;
+    }
+
+    .register-btn:hover {
+      background-color: #cc0000;
+    }
+
+    .payment-methods {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .payment-methods h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .payment-methods ul {
+      list-style: none;
+      padding-left: 0;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #ccc;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .whatsapp-btn,
+      .register-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .whatsapp-btn img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .logo {
+        width: 140px;
+      }
+
+      .language-selector select {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .language-label {
+        font-size: 14px;
+      }
+
+      .payment-methods {
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+
+      .payment-methods h2 {
+        font-size: 20px;
+      }
+
+      .payment-methods ul {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="logo/logo.png" alt="Ice777 Logo" class="logo" />
+
+    <div class="language-selector">
+      <div class="language-label">FOR !D Message on WhatsApp</div>
+      <select onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="kn">ಕನ್ನಡ</option>
+        <option value="ta">தமிழ்</option>
+        <option value="te">తెలుగు</option>
+      </select>
+    </div>
+
+    <h1 id="headline">Welcome to Ice777</h1>
+    <p id="subtext">Fast deposits, instant withdrawals, and non-stop gaming action.<br>Join now and feel the thrill of Ice777!</p>
+
+    <!-- Button Row -->
+    <div class="btn-row">
+      <a
+        class="whatsapp-btn"
+        id="whatsappLink"
+        href="https://wa.me/+447990181958?text=Hi%20I'm%20interested%20in%20Ice777"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
+        Chat on WhatsApp
+      </a>
+
+      <a
+        class="register-btn"
+        href="https://wa.me/+447990181958?text=Hi%20I'm%20interested%20in%20Ice777"
+        target="_blank"
+      >
+        Register Now
+      </a>
+    </div>
+
+    <!-- Payment Methods Section -->
+    <div class="payment-methods">
+      <h2>💳 Payment Methods</h2>
+      <ul>
+        <li>🏦 Net Banking</li>
+        <li>📲 UPI Payments</li>
+        <li>💳 Direct Bank Transfers</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      © 2025 Ice777. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function changeLanguage(lang) {
+      const content = {
+        en: {
+          title: "Welcome to Ice777",
+          desc: "Fast deposits, instant withdrawals, and non-stop gaming action.<br>Join now and feel the thrill of Ice777!",
+          wa: "Hi, I'm interested in Ice777"
+        },
+        hi: {
+          title: "Ice777 में आपका स्वागत है",
+          desc: "तेज़ जमा, त्वरित निकासी, और नॉन-स्टॉप गेमिंग एक्शन।<br>अब जुड़ें और Ice777 का रोमांच महसूस करें!",
+          wa: "नमस्ते, मैं Ice777 में रुचि रखता हूँ"
+        },
+        kn: {
+          title: "Ice777 ಗೆ ಸುಸ್ವಾಗತ",
+          desc: "ತ್ವರಿತ ಠೇವಣಿ, ತಕ್ಷಣ ಹಣ ಹಿಂಪಡೆದು ಮತ್ತು ನಿಲ್ಲದ ಆಟದ ಮೋಜು.<br>ಈಗ ಸೇರಿ ಮತ್ತು ರೋಚಕತೆಯನ್ನು ಅನುಭವಿಸಿ!",
+          wa: "ನಮಸ್ಕಾರ, ನಾನು Ice777 ಆಸಕ್ತನಾಗಿದ್ದೇನೆ"
+        },
+        ta: {
+          title: "Ice777-க்கு வரவேற்கிறோம்",
+          desc: "விரைவு வைப்பு, உடனடி பணம் எடுத்தல், இடைவிலையில்லா விளையாட்டு சாகசம்.<br>இப்போதே சேருங்கள்!",
+          wa: "வணக்கம், Ice777-ல் எனக்கு ஆர்வம் உள்ளது"
+        },
+        te: {
+          title: "Ice777కి స్వాగతం",
+          desc: "త్వరిత డిపాజిట్లు, తక్షణ ఉపసంహరణలు, ఆగని గేమింగ్ మోజు.<br>ఇప్పుడే చేరండి!",
+          wa: "హాయ్, నాకు Ice777పై ఆసక్తి ఉంది"
+        }
+      };
+
+      document.getElementById("headline").innerHTML = content[lang].title;
+      document.getElementById("subtext").innerHTML = content[lang].desc;
+
+      const encodedMessage = encodeURIComponent(content[lang].wa);
+      document.getElementById("whatsappLink").href = `https://wa.me/+447990181958?text=${encodedMessage}`;
+    }
+  </script>
+</body>
+</html>
